@@ -1,2 +1,2 @@
 # TODO: fix this later
-print("Hello world Sanjib")
+print("Hello world")
