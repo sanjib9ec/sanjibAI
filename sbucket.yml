@@ -1,5 +1,5 @@
 AWSTemplateFormatVersion: '2010-09-09'
-Description: Test template with unencrypted and public S3 bucket
+Description: Test template with unencryped and public S3 bucket
 
 Resources:
   InsecureBucket:
