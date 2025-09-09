@@ -1,0 +1,10 @@
+AWSTemplateFormatVersion: '2010-09-09'
+Description: Test template with unencrypted and public S3 bucket
+
+Resources:
+  InsecureBucket:
+    Type: AWS::S3::Bucket
+    Properties:
+      BucketName: my-insecure-test-bucket
+      AccessControl: PublicRead
+      # ❌ No BucketEncryption defined here

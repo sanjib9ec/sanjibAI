@@ -4,7 +4,7 @@ import boto3
 import os
 
 # --------------------------
-# 1. API CONFIG
+# 1. API CONFIG Sanjib
 # --------------------------
 API_URL = "https://jsonplaceholder.typicode.com/posts"  # sample placeholder API
 
