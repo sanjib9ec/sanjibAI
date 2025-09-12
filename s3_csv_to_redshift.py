@@ -10,7 +10,7 @@ import io
 import boto3
 
 # ======================
-# Configurations
+# Configurations er
 # ======================
 SOURCE_BUCKET = "sanjib-dev-bucket"
 SOURCE_KEY = "input/data.csv"
