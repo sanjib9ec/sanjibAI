@@ -1,20 +1,16 @@
-Do a review of the files in *.py for any CRITICAL or HIGH issues.
-Put any review comments in seperate json files under the '.amazonq/review/' directory the json files must be in the format
+Do a review of any  *.py for any CRITICAL or HIGH issues.
 
-{
-  "filepath": <relative path to the file>,
-  "comment": <The review comment>,
-  "suggested_change": <the suggested code change>,
-  "start_line": <the start line of the suggestion>,
-  "end_line": <the end line of the suggestion>
-}
 
 # Server Side Encryption
 Description: redsift or S3 data missing server side encryption
-Rule: Flag every TODO as MEDIUM severity.
+Rule: Flag MEDIUM severity if found.
 
 
 # No Hardcoding of environment
 Description: Any bucket name containing which is not parameterized.e.g name contains dev/test/prod/prd instead of {env}
-Rule: Flag every TODO as HIGH severity.
+Rule: Flag HIGH severity if found.
+
+# Configurations or Config should be in separate YML file
+Description: any config such as s3 bucket name ,path key should be in separate .yml or .YAMl file
+Rule: Flag HIGH severity if found.
 
