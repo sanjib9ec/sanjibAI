@@ -20,3 +20,6 @@ Please provide a % of Recomendation on whether we should merge that code?
  - 50% - Not Recomended
  - 75% - Recomended
  - 100% - Strongly Recomended
+ 
+ # Sent escalation email
+ If the % of Recomendation is less than 70% please send a notification to abcd@xyz.com
