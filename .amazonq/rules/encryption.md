@@ -1,4 +1,4 @@
-Do a review of any  *.py for any CRITICAL or HIGH issues.
+# Do a review of any  *.py for any CRITICAL or HIGH issues.
 
 
 # Server Side Encryption
