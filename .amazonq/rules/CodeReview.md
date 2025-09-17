@@ -5,6 +5,13 @@
 Description: redsift or S3 data missing server side encryption
 Rule: Flag MEDIUM severity if found.
 
+# SQL Injection
+Description: Check for SQL injection vulnerability.
+Rule: Flag CRITICAL severity if found.
+
+# Error Handling
+Description: Error handling and debugging.
+Rule: Flag LOW severity if found.
 
 # No Hardcoding of environment
 Description: Any bucket name containing which is not parameterized.e.g name contains dev/test/prod/prd instead of {env}
