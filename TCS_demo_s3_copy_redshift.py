@@ -45,13 +45,24 @@ def convert_csv_to_parquet(**kwargs):
 
 def copy_parquet_to_redshift(**kwargs):
     redshift = RedshiftSQLHook(redshift_conn_id=REDSHIFT_CONN_ID)
+    
+    # Validate inputs to prevent injection
+    if not all(isinstance(var, str) and var for var in [REDSHIFT_TABLE, TRANSFORMED_BUCKET, TRANSFORMED_KEY, IAM_ROLE]):
+        raise ValueError("All configuration variables must be non-empty strings")
+    
+    # Additional validation for table name (basic SQL identifier validation)
+    if not REDSHIFT_TABLE.replace('.', '').replace('_', '').isalnum():
+        raise ValueError("Invalid table name format")
+    
+    s3_path = f's3://{TRANSFORMED_BUCKET}/{TRANSFORMED_KEY}'
     sql = f"""
         COPY {REDSHIFT_TABLE}
-        FROM 's3://{TRANSFORMED_BUCKET}/{TRANSFORMED_KEY}'
+        FROM '{s3_path}'
         IAM_ROLE '{IAM_ROLE}'
         FORMAT AS PARQUET;
     """
     redshift.run(sql)
+    print(f"✅ Data copied into Redshift table {REDSHIFT_TABLE}")
     print(f"✅ Data copied into Redshift table {REDSHIFT_TABLE}")
 
 # ======================
